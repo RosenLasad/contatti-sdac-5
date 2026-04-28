@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contatti e richiesta informazioni | SDAC</title>
+    <meta
+      name="description"
+      content="Contatti diretti e richiesta informazioni/preventivo per i corsi della SDAC."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container topbar">
+        <a class="brand" href="https://sdac.it/" aria-label="Vai al sito SDAC">
+          <img src="assets/sdac-logo.png" alt="SDAC" class="brand__logo" />
+        </a>
+
+        <nav class="main-nav" aria-label="Navigazione principale SDAC">
+          <a href="https://sdac.it/corsi/">Corsi</a>
+          <a href="https://sdac.it/seminari/">Seminari</a>
+          <a href="https://sdac.it/chi-siamo/">Chi siamo</a>
+          <a href="/" class="is-active" aria-current="page">Contattaci</a>
+        </nav>
+      </div>
+
+      <div class="container hero__inner">
+        <h1>Contatti e richiesta informazioni</h1>
+        <p class="hero__text">
+          Contattaci direttamente oppure richiedi un preventivo personalizzato
+          sui corsi SDAC.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--contacts">
+        <div class="container">
+          <div class="section-heading section-heading--left section-heading--contacts">
+            <p class="section-kicker">1. Contatti diretti</p>
+            <h2>Parla subito con noi</h2>
+            <p>
+              Se preferisci, puoi scriverci o chiamarci direttamente.
+            </p>
+          </div>
+
+          <div class="contact-lines" aria-label="Contatti diretti SDAC">
+            <p class="contact-line">
+              <span class="contact-line__label">Email:</span>
+              <a href="mailto:info@sdac.it">info@sdac.it</a>
+            </p>
+            <p class="contact-line">
+              <span class="contact-line__label">Telefono:</span>
+              <a href="tel:+393483555781">3483555781</a>
+            </p>
+            <p class="contact-line">
+              <span class="contact-line__label">Indirizzo:</span>
+              <span>Via Ludovico Antonio Muratori, 5 - 16152 Genova</span>
+            </p>
+            <p class="contact-line">
+              <span class="contact-line__label">Orari:</span>
+              <span>9:30 – 18:30, da Lunedì a Venerdì (si consiglia di prendere appuntamento)</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--form">
+        <div class="container form-layout">
+          <div class="form-copy">
+            <div class="section-heading section-heading--left">
+              <p class="section-kicker">2. Richiedi info e preventivo</p>
+              <h2>Ricevi il riepilogo via email</h2>
+              <p>
+                Compila il modulo con i corsi che ti interessano. La SDAC
+                riceverà la tua richiesta e tu riceverai una mail con il riepilogo
+                e le informazioni relative ai corsi selezionati.
+              </p>
+            </div>
+
+            <ul class="feature-list">
+              <li>Selezione dei corsi di interesse</li>
+              <li>Invio automatico alla tua email e alla scuola</li>
+              <li>Messaggio personale facoltativo</li>
+            </ul>
+          </div>
+
+          <form id="preventivo-form" class="form-card" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="nome">Nome e cognome *</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
+              </div>
+
+              <div class="field">
+                <label for="preferenza">Preferenza di contatto</label>
+                <select id="preferenza" name="preferenza">
+                  <option value="">Seleziona</option>
+                  <option value="email">Email</option>
+                  <option value="telefono">Telefono</option>
+                  <option value="indifferente">Indifferente</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="field fieldset">
+              <legend>Corsi di interesse *</legend>
+              <div class="checkbox-grid">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="regia" />
+                  <span>Regia</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="operatore" />
+                  <span>Operatore + Direzione della fotografia</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="montaggio" />
+                  <span>Montaggio</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="sceneggiatura" />
+                  <span>Sceneggiatura</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="fonico" />
+                  <span>Fonico</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="corsi" value="colonna_sonora" />
+                  <span>Colonna sonora</span>
+                </label>
+              </div>
+              <p id="corsi-error" class="field-error" hidden>
+                Seleziona almeno un corso.
+              </p>
+            </fieldset>
+
+            <div class="field">
+              <label for="messaggio">Messaggio / note</label>
+              <textarea
+                id="messaggio"
+                name="messaggio"
+                rows="5"
+                placeholder="Scrivi qui eventuali domande o richieste particolari..."
+              ></textarea>
+            </div>
+
+            <div class="field field--consent">
+              <label class="checkbox-inline">
+                <input id="privacy" name="privacy" type="checkbox" required />
+                <span>
+                  Ho letto l'informativa privacy e acconsento al trattamento dei dati
+                  per ricevere informazioni sui corsi SDAC. *
+                </span>
+              </label>
+              <p class="field-note">
+              <a href="#" target="_blank" rel="noopener">Leggi l'informativa</a>.
+              </p>
+            </div>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Non compilare questo campo</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-actions">
+              <button id="submit-button" class="button" type="submit">
+                Invia richiesta
+              </button>
+              <p class="form-footnote">
+                I campi contrassegnati con * sono obbligatori.
+              </p>
+            </div>
+
+            <div id="form-status" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-kicker">Link veloci</p>
+
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3><a href="https://sdac.it/corsi/">Corsi</a></h3>
+            <ul class="footer-links">
+              <li><a href="https://sdac.it/corso/regia/">Regia</a></li>
+              <li><a href="https://sdac.it/corso/regia-avanzata/">Regia avanzata</a></li>
+              <li><a href="https://sdac.it/corso/sceneggiatura/">Sceneggiatura</a></li>
+              <li><a href="https://sdac.it/corso/forografia/">Operatore e direttore della fotografia</a></li>
+              <li><a href="https://sdac.it/corso/montaggio/">Montaggio</a></li>
+              <li><a href="https://sdac.it/corso/fonico/">Tecnico del suono</a></li>
+              <li><a href="https://sdac.it/corso/colonne-sonore/">Colonne sonore</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Informazioni</h3>
+            <ul class="footer-links">
+              <li><a href="https://sdac.it/seminari/">Seminari</a></li>
+              <li><a href="https://sdac.it/chi-siamo/">Chi siamo</a></li>
+              <li><a href="https://sdac.it/contattaci/">Contattaci</a></li>
+              <li><a href="https://sdac.it/collabora-con-noi/">Collabora con noi</a></li>
+              <li><a href="https://www.google.com/maps/place/SDAC+-+Scuola+D'Arte+Cinematografica/@44.415403,8.8753847,15z/data=!4m6!3m5!1s0x12d343de77edf445:0x1920c700d8f5213e!8m2!3d44.415403!4d8.8753847!16s%2Fg%2F1tf4zp8n?sa=X&ved=2ahUKEwjP1OKdzZaDAxUtQ_EDHWKwCVgQ_BJ6BAg-EAA&entry=tts" target="_blank" rel="noopener">Google Maps</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Social</h3>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/sdac.genova/" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="https://www.instagram.com/sdac.genova/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.youtube.com/@sdac-genova" target="_blank" rel="noopener">Youtube</a></li>
+              <li><a href="https://www.spreaker.com/podcast/radio-sdac--4886480" target="_blank" rel="noopener">Spreaker</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column footer-column--info">
+            <h3>SDAC by Indie Club</h3>
+            <p>C.F.: 95174080101</p>
+            <p>Via Ludovico Antonio Muratori, 5</p>
+            <p>Genova, 16152</p>
+            <p>Lun – ven: dalle 9.30 alle 18.30</p>
+            <p>(Si consiglia di prendere appuntamento)</p>
+            <p><a href="tel:+393483555781">Tel: 348 3555 781</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

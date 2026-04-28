@@ -1,0 +1,50 @@
+ISTRUZIONI DETTAGLIATE - GMAIL SMTP + NETLIFY
+
+A) CREA LA PASSWORD PER APP GOOGLE
+
+1. Entra nell'account Google comunicazione.sdac@gmail.com.
+2. Vai in Gestione Account Google > Sicurezza.
+3. Attiva la verifica in due passaggi, se non e gia attiva.
+4. Cerca Password per le app.
+5. Crea una nuova password per app, per esempio con nome: Netlify SDAC Preventivi.
+6. Google ti dara una password di 16 caratteri.
+7. Copiala: sara il valore della variabile SMTP_PASS su Netlify.
+
+B) CONFIGURA NETLIFY
+
+1. Entra in Netlify.
+2. Apri il sito sdac-contatti.
+3. Vai in Site configuration > Environment variables.
+4. Aggiungi:
+
+   SMTP_USER = comunicazione.sdac@gmail.com
+   SMTP_PASS = la password per app Google, senza spazi
+   SDAC_TO_EMAIL = comunicazione.sdac@gmail.com
+
+5. Rimuovi, se ci sono ancora:
+
+   RESEND_API_KEY
+   FROM_EMAIL
+
+6. Salva.
+7. Vai in Deploys e fai Trigger deploy > Deploy site.
+
+C) TEST
+
+1. Apri https://sdac-contatti.netlify.app/
+2. Compila il modulo con una tua email di prova.
+3. Seleziona uno o piu corsi.
+4. Invia.
+5. Controlla che:
+   - il PDF venga scaricato dal browser;
+   - comunicazione.sdac@gmail.com riceva una mail con oggetto "Nuova richiesta SDAC da ...";
+   - il PDF sia allegato;
+   - cliccando Rispondi, il destinatario sia l'email inserita dall'utente.
+
+D) SE NON ARRIVA LA MAIL
+
+1. Controlla in Netlify: Deploys > Functions > send-preventivo > Logs.
+2. Verifica che SMTP_USER, SMTP_PASS e SDAC_TO_EMAIL siano presenti.
+3. Ricontrolla la password per app: deve essere quella generata da Google, non la password normale di Gmail.
+4. Controlla Spam/Posta indesiderata.
+5. Dopo aver cambiato variabili ambiente, fai sempre un nuovo deploy.
