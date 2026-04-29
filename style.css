@@ -587,3 +587,46 @@ textarea {
     margin-top: 1.3rem;
   }
 }
+
+@media (orientation: portrait), (max-width: 368px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .brand {
+    align-self: flex-start;
+  }
+
+  .brand__logo {
+    max-width: 235px;
+    height: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+    text-align: center;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .main-nav a:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  }
+
+  .hero__inner {
+    padding-top: 42px;
+  }
+}
