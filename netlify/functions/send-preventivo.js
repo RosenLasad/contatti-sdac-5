@@ -488,7 +488,7 @@ function addPageIfNeeded(requiredSpace = 36) {
 
   y -= 4;
 
-  drawTextLine('La segreteria SDAC', {
+  drawTextLine('Segreteria SDAC', {
     size: 10.5,
     font: fontBold,
     color: rgb(0.12, 0.12, 0.12),
