@@ -5,32 +5,32 @@ const COURSES = {
   regia: {
     name: 'Regia',
     price: 1500,
-    summary: `Il corso di Regia accompagna lo studente nella comprensione del linguaggio cinematografico e del ruolo del regista, dalla nascita dell’idea fino alla realizzazione del film. Le lezioni alternano teoria e pratica, affrontando la costruzione della scena, la direzione degli attori, la scelta delle inquadrature, il lavoro con la troupe, la preparazione del piano di regia e la gestione del set. Durante il percorso lo studente potrà sviluppare e girare un proprio cortometraggio personale, usufruendo dei servizi di location e casting e del noleggio dell’attrezzatura professionale compreso nella quota. Un corso base ma professionale, pensato per trasformare un’idea in un progetto audiovisivo concreto.`
+    summary: 'Percorso dedicato alla regia cinematografica e alla costruzione dello sguardo autoriale.'
   },
   operatore: {
     name: 'Operatore + Direzione della fotografia',
     price: 1200,
-    summary: `Il corso di Operatore e Direzione della Fotografia introduce lo studente all’uso professionale della macchina da presa e alla costruzione dell’immagine cinematografica. Il percorso unisce lezioni teoriche e prove pratiche su inquadratura, esposizione, ottiche, movimenti di camera, composizione, luce, colore e continuità visiva. Gli studenti lavoreranno con strumenti professionali e potranno partecipare come troupe alla realizzazione dei cortometraggi degli studenti di regia, mettendo in pratica sul set le competenze acquisite. Il corso è pensato per chi vuole imparare a raccontare una storia attraverso l’immagine, comprendendo sia il lato tecnico sia quello creativo della fotografia cinematografica.`
+    summary: 'Tecniche di ripresa, macchina da presa, inquadrature, luce e gestione dell\'immagine.'
   },
   montaggio: {
     name: 'Montaggio',
     price: 1000,
-    summary: `Il corso di Montaggio guida lo studente nella costruzione narrativa e ritmica di un prodotto audiovisivo. Attraverso lezioni di teoria e pratica, il percorso affronta il linguaggio del montaggio, la selezione delle riprese, la continuità, il ritmo, il montaggio narrativo, emotivo e sonoro, fino all’organizzazione del materiale e alla finalizzazione del progetto. Gli studenti lavoreranno su software e strumenti professionali, imparando a dare forma al racconto attraverso le immagini. Durante il percorso potranno collaborare alla post-produzione dei cortometraggi realizzati dagli studenti di regia, sperimentando un flusso di lavoro vicino a quello di una vera produzione cinematografica.`
+    summary: 'Teoria e pratica del montaggio audiovisivo, ritmo, raccordi e costruzione narrativa.'
   },
   sceneggiatura: {
     name: 'Sceneggiatura',
     price: 1000,
-    summary: `Il corso di Sceneggiatura accompagna lo studente nello sviluppo di un’idea narrativa fino alla costruzione di un soggetto, di una scaletta e di una sceneggiatura cinematografica. Le lezioni alternano teoria, analisi e scrittura pratica, affrontando struttura, personaggi, conflitto, dialoghi, ritmo, genere e costruzione delle scene. Il percorso è pensato per fornire basi solide ma professionali a chi vuole imparare a scrivere per il cinema e l’audiovisivo. Gli studenti potranno confrontarsi con il lavoro di regia e produzione dei cortometraggi, comprendendo come una sceneggiatura diventi un progetto concreto e come la scrittura dialoghi con le esigenze del set, degli attori e della troupe.`
+    summary: 'Dall\'idea alla struttura, con attenzione a soggetto, conflitto, personaggi e dialoghi.'
   },
   fonico: {
     name: 'Fonico',
     price: 1000,
-    summary: `Il corso di Fonico introduce lo studente al ruolo fondamentale del suono nella produzione audiovisiva. Attraverso lezioni teoriche e attività pratiche, il percorso affronta la presa diretta, l’uso dei microfoni, la gestione dei livelli, il lavoro sul set, la registrazione dei dialoghi, degli ambienti e degli effetti sonori. Gli studenti utilizzeranno strumenti professionali e potranno partecipare come reparto audio alla realizzazione dei cortometraggi degli studenti di regia, imparando a lavorare in coordinamento con regista, operatori e attori. Il corso offre una preparazione base ma concreta, pensata per comprendere quanto il suono contribuisca alla qualità tecnica ed emotiva di un film.`
+    summary: 'Presa diretta, gestione del suono sul set e fondamenti tecnici dell\'audio per il cinema.'
   },
   colonna_sonora: {
     name: 'Colonna sonora',
     price: 1000,
-    summary: `Il corso di Colonne Sonore è dedicato al rapporto tra musica, immagine e racconto cinematografico. Le lezioni alternano teoria, ascolto, analisi e pratica, affrontando il ruolo della musica nel film, il rapporto con le emozioni, il ritmo narrativo, i temi musicali, il commento sonoro e il dialogo con regia e montaggio. Gli studenti potranno lavorare su esempi concreti e confrontarsi con le esigenze dei cortometraggi realizzati durante il percorso, contribuendo alla costruzione dell’identità sonora dei progetti. Il corso è pensato per chi vuole comprendere come una colonna sonora possa rafforzare una scena, guidare lo spettatore e diventare parte essenziale del linguaggio cinematografico.`
+    summary: 'Rapporto tra musica e immagine, funzioni drammaturgiche della colonna sonora e ascolto guidato.'
   }
 };
 
@@ -277,20 +277,52 @@ function addPageIfNeeded(requiredSpace = 36) {
     y -= 24;
   }
 
-  page.drawText('SDAC - Richiesta informazioni e preventivo', {
+  const requestDateText = `Data richiesta: ${new Date().toLocaleString('it-IT')}`;
+  const requestDateSize = 9.5;
+  const pageWidth = page.getWidth();
+  const requestDateWidth = fontRegular.widthOfTextAtSize(requestDateText, requestDateSize);
+
+  page.drawText(requestDateText, {
+    x: pageWidth - marginX - requestDateWidth,
+    y: pageTop + 8,
+    size: requestDateSize,
+    font: fontRegular,
+    color: rgb(0.35, 0.35, 0.35)
+  });
+
+  page.drawText('Riepilogo della richiesta e preventivo informativo', {
     x: marginX,
     y,
-    size: 20,
+    size: 18,
     font: fontBold,
     color: rgb(0.1, 0.1, 0.1)
   });
 
-  y -= 24;
-  drawTextLine(`Data richiesta: ${new Date().toLocaleString('it-IT')}`, {
-    size: 10,
-    color: rgb(0.35, 0.35, 0.35),
-    lineHeight: 20
-  });
+  y -= 32;
+
+  drawWrappedText(
+    "Grazie per averci contattato. La sua richiesta è stata inoltrata alla segreteria della SDAC - Scuola D'Arte Cinematografica. Verrà ricontattato il prima possibile attraverso la modalità di contatto che ha indicato come preferita.",
+    {
+      size: 10.5,
+      color: rgb(0.2, 0.2, 0.2),
+      maxLength: 88,
+      lineHeight: 14.5,
+      after: 4
+    }
+  );
+
+  drawWrappedText(
+    'Il riepilogo economico riportato di seguito ha esclusivamente funzione informativa: non costituisce un contratto, una proposta vincolante o una conferma di iscrizione. La segreteria potrà confermare dettagli, disponibilità, eventuali agevolazioni e modalità di pagamento durante il successivo contatto.',
+    {
+      size: 10.5,
+      color: rgb(0.2, 0.2, 0.2),
+      maxLength: 88,
+      lineHeight: 14.5,
+      after: 4
+    }
+  );
+
+  drawDivider();
 
   drawSectionTitle('Dati del richiedente');
 
@@ -378,9 +410,9 @@ function addPageIfNeeded(requiredSpace = 36) {
     });
   });
 
-  drawSectionTitle('Nota sul preventivo');
+  drawSectionTitle('Nota finale');
   drawWrappedText(
-    'Questo riepilogo ha valore informativo. Eventuali promozioni, agevolazioni o aggiornamenti economici possono essere comunicati successivamente dalla segreteria SDAC.',
+    'La segreteria SDAC resta a disposizione per confermare il percorso più adatto, verificare la disponibilità dei posti e fornire eventuali informazioni aggiuntive sui corsi selezionati.',
     {
       size: 9.7,
       color: rgb(0.35, 0.35, 0.35),
