@@ -477,8 +477,8 @@ function addPageIfNeeded(requiredSpace = 36) {
     }
   );
 
-  y -= 18;
-  addPageIfNeeded(52);
+    y -= 18;
+  addPageIfNeeded(90);
 
   drawTextLine('Cordiali saluti,', {
     size: 10.2,
@@ -501,7 +501,19 @@ function addPageIfNeeded(requiredSpace = 36) {
     lineHeight: 15
   });
 
-  drawFooter(page);
+  y -= 6;
+
+  [
+    'Tel. 348 3555 781',
+    'Email: info@sdac.it',
+    'Sede: Via L. A. Muratori, 5 - 16152 Genova'
+  ].forEach((line) => {
+    drawTextLine(line, {
+      size: 9.4,
+      color: rgb(0.34, 0.34, 0.34),
+      lineHeight: 12.8
+    });
+  });
 
 return pdfDoc.save();
 }
