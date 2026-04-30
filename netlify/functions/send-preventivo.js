@@ -495,7 +495,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     lineHeight: 15
   });
 
-  drawTextLine("Scuola D'Arte Cinematografica", {
+  drawTextLine("Scuola D'Arte Cinematografica di Genova", {
     size: 10.2,
     color: rgb(0.22, 0.22, 0.22),
     lineHeight: 15
