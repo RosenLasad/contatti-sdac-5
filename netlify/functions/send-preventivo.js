@@ -278,50 +278,46 @@ function addPageIfNeeded(requiredSpace = 36) {
   }
 
   const requestDateText = `Data richiesta: ${new Date().toLocaleString('it-IT')}`;
-  const requestDateSize = 9.5;
+  const requestDateSize = 9;
   const pageWidth = page.getWidth();
   const requestDateWidth = fontRegular.widthOfTextAtSize(requestDateText, requestDateSize);
 
   page.drawText(requestDateText, {
     x: pageWidth - marginX - requestDateWidth,
-    y: pageTop + 8,
+    y: pageTop + 20,
     size: requestDateSize,
     font: fontRegular,
     color: rgb(0.35, 0.35, 0.35)
   });
 
+  y = pageTop - 12;
+
   page.drawText('Riepilogo della richiesta e preventivo informativo', {
     x: marginX,
     y,
-    size: 18,
+    size: 15.5,
     font: fontBold,
     color: rgb(0.1, 0.1, 0.1)
   });
 
-  y -= 32;
+  y -= 30;
 
-  drawWrappedText(
+  const introductoryParagraphs = [
     "Grazie per averci contattato. La sua richiesta è stata inoltrata alla segreteria della SDAC - Scuola D'Arte Cinematografica. Verrà ricontattato il prima possibile attraverso la modalità di contatto che ha indicato come preferita.",
-    {
-      size: 10.5,
-      color: rgb(0.2, 0.2, 0.2),
-      maxLength: 88,
-      lineHeight: 14.5,
-      after: 4
-    }
-  );
+    'Il riepilogo economico riportato di seguito ha esclusivamente funzione informativa: non costituisce un contratto, una proposta vincolante o una conferma di iscrizione. La segreteria potrà confermare dettagli, disponibilità, eventuali agevolazioni e modalità di pagamento durante il successivo contatto.'
+  ];
 
-  drawWrappedText(
-    'Il riepilogo economico riportato di seguito ha esclusivamente funzione informativa: non costituisce un contratto, una proposta vincolante o una conferma di iscrizione. La segreteria potrà confermare dettagli, disponibilità, eventuali agevolazioni e modalità di pagamento durante il successivo contatto.',
-    {
-      size: 10.5,
+  introductoryParagraphs.forEach((paragraph) => {
+    drawWrappedText(paragraph, {
+      size: 10.2,
       color: rgb(0.2, 0.2, 0.2),
-      maxLength: 88,
-      lineHeight: 14.5,
-      after: 4
-    }
-  );
+      maxLength: 80,
+      lineHeight: 14.2,
+      after: 6
+    });
+  });
 
+  y -= 2;
   drawDivider();
 
   drawSectionTitle('Dati del richiedente');
