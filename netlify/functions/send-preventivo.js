@@ -425,7 +425,7 @@ function addPageIfNeeded(requiredSpace = 36) {
       color: rgb(0.18, 0.18, 0.18),
       maxLength: 86,
       lineHeight: 15,
-      after: 2
+      after: 9
     });
   } else {
     drawWrappedText(`Sconto applicato: ${quote.discountLabel}`, {
@@ -433,7 +433,7 @@ function addPageIfNeeded(requiredSpace = 36) {
       color: rgb(0.18, 0.18, 0.18),
       maxLength: 86,
       lineHeight: 15,
-      after: 2
+      after: 9
     });
   }
 
