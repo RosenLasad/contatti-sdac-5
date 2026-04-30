@@ -465,9 +465,9 @@ function addPageIfNeeded(requiredSpace = 36) {
     });
   });
 
-  drawSectionTitle('Nota finale');
+    drawSectionTitle('Nota finale');
   drawWrappedText(
-    'La segreteria SDAC resta a disposizione per fissare un appuntamento, fornire informazioni aggiuntive sui corsi selezionati e verificarne la disponibilità dei posti.',
+    'La segreteria SDAC resta a disposizione per confermare il percorso più adatto, verificare la disponibilità dei posti e fornire eventuali informazioni aggiuntive sui corsi selezionati.',
     {
       size: 9.7,
       color: rgb(0.35, 0.35, 0.35),
@@ -476,6 +476,30 @@ function addPageIfNeeded(requiredSpace = 36) {
       align: 'justify'
     }
   );
+
+  y -= 18;
+  addPageIfNeeded(52);
+
+  drawTextLine('Cordiali saluti,', {
+    size: 10.2,
+    color: rgb(0.22, 0.22, 0.22),
+    lineHeight: 15
+  });
+
+  y -= 4;
+
+  drawTextLine('La segreteria SDAC', {
+    size: 10.5,
+    font: fontBold,
+    color: rgb(0.12, 0.12, 0.12),
+    lineHeight: 15
+  });
+
+  drawTextLine("Scuola D'Arte Cinematografica", {
+    size: 10.2,
+    color: rgb(0.22, 0.22, 0.22),
+    lineHeight: 15
+  });
 
   drawFooter(page);
 
