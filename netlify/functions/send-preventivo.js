@@ -312,7 +312,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     drawWrappedText(paragraph, {
       size: 10.2,
       color: rgb(0.2, 0.2, 0.2),
-      maxLength: 80,
+      maxLength: 95,
       lineHeight: 14.2,
       after: 6
     });
@@ -347,7 +347,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     drawWrappedText(course.summary, {
       x: marginX + 12,
       size: 10.5,
-      maxLength: 84,
+      maxLength: 90,
       lineHeight: 14,
       after: 7
     });
@@ -365,7 +365,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     drawWrappedText(`Sconto applicato: ${quote.discountLabel} (-${formatEuro(quote.discountAmount)})`, {
       size: 11,
       color: rgb(0.18, 0.18, 0.18),
-      maxLength: 86,
+      maxLength: 90,
       lineHeight: 15,
       after: 2
     });
@@ -373,7 +373,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     drawWrappedText(`Sconto applicato: ${quote.discountLabel}`, {
       size: 11,
       color: rgb(0.18, 0.18, 0.18),
-      maxLength: 86,
+      maxLength: 90,
       lineHeight: 15,
       after: 2
     });
@@ -389,7 +389,7 @@ function addPageIfNeeded(requiredSpace = 36) {
   drawWrappedText(messaggio || 'Nessun messaggio aggiuntivo.', {
     size: 10.5,
     color: rgb(0.12, 0.12, 0.12),
-    maxLength: 88,
+    maxLength: 95,
     lineHeight: 14,
     after: 12
   });
@@ -400,7 +400,7 @@ function addPageIfNeeded(requiredSpace = 36) {
       drawWrappedText(paragraph, {
         size: 10.2,
         color: rgb(0.22, 0.22, 0.22),
-        maxLength: 91,
+        maxLength: 95,
         lineHeight: 13.8,
         after: 7
       });
@@ -413,7 +413,7 @@ function addPageIfNeeded(requiredSpace = 36) {
     {
       size: 9.7,
       color: rgb(0.35, 0.35, 0.35),
-      maxLength: 92,
+      maxLength: 95,
       lineHeight: 12.5,
       after: 0
     }
