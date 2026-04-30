@@ -46,8 +46,8 @@ const COURSE_PATH_INFO = [
   {
     title: 'Informazioni sul percorso formativo',
     paragraphs: [
-      'I corsi SDAC si tengono una volta alla settimana, per un totale di 10 settimane.',
-      'Al termine delle 10 lezioni di ciascun corso, inizierà il corso di Produzione, che riunisce gli studenti dei diversi percorsi in lezioni pratiche sul set. Le lezioni di pratica partiranno indicativamente da gennaio/febbraio e avranno una durata di 3 ore, dalle 16:00 alle 19:00.',
+      'I corsi SDAC si tengono una volta alla settimana, per un totale di 10 settimane. Ogni corso ha un limite massimo di 15 studenti.',
+      'Al termine delle 10 lezioni di ciascun corso, il percorso didattico continua con il corso di Produzione, per tutti gli studenti dei diversi corsi, con lezioni di pratica sul set. Le lezioni del corso di Produzione partiranno indicativamente da gennaio/febbraio e avranno una durata di 3 ore, dalle 16:00 alle 19:00.',
       'Dopo le 10 lezioni di Produzione, prenderà avvio la realizzazione dei cortometraggi di fine anno. A partire da maggio, gli studenti di Regia potranno girare i propri cortometraggi, con 3 giorni di ripresa e 2 giorni di montaggio per ciascun progetto.',
       'Gli studenti di Sceneggiatura, Operatore, Montaggio e degli altri corsi potranno partecipare ai set e contribuire alla produzione dei cortometraggi, mettendo in pratica le competenze acquisite durante l\'anno.',
       'Al termine della produzione, i cortometraggi verranno proiettati al cinema in una serata pubblica di fine anno e resteranno di proprietà del regista.',
@@ -467,7 +467,7 @@ function addPageIfNeeded(requiredSpace = 36) {
 
   drawSectionTitle('Nota finale');
   drawWrappedText(
-    'La segreteria SDAC resta a disposizione per confermare il percorso più adatto, verificare la disponibilità dei posti e fornire eventuali informazioni aggiuntive sui corsi selezionati.',
+    'La segreteria SDAC resta a disposizione per fissare un appuntamento, fornire informazioni aggiuntive sui corsi selezionati e verificarne la disponibilità dei posti.',
     {
       size: 9.7,
       color: rgb(0.35, 0.35, 0.35),
