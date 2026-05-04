@@ -467,7 +467,7 @@ function addPageIfNeeded(requiredSpace = 36) {
 
     drawSectionTitle('Nota finale');
   drawWrappedText(
-    'La segreteria SDAC resta a disposizione per confermare il percorso più adatto, verificare la disponibilità dei posti e fornire eventuali informazioni aggiuntive sui corsi selezionati.',
+    'La segreteria SDAC resta a disposizione per prendere appuntamento, verificare la disponibilità dei posti e fornire eventuali informazioni aggiuntive sui corsi selezionati.',
     {
       size: 9.7,
       color: rgb(0.35, 0.35, 0.35),
